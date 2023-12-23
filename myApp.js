@@ -1,6 +1,14 @@
 let express = require('express');
 let app = express();
 
+
+app.use((request, response, next) => {
+   console.log(request.method + " " 
+   + request.path + " - " + request.ip);
+   next();
+ });
+
+
 require('dotenv').config();
 
 console.log("Hello World");
