@@ -6,9 +6,9 @@ require('dotenv').config();
 console.log("Hello World");
 console.log(process.env.MESSAGE_STYLE)
 
-app.get('/', (req, res) => {
-    res.send("Hello Express")
-});
+//app.get('/', (req, res) => {
+   // res.send("Hello Express")
+//});
 
 app.get('/',(req, res) => {
     res.sendFile(__dirname + "/views/index.html");
