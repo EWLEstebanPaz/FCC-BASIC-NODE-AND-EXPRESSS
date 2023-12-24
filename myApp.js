@@ -10,6 +10,9 @@ app.use((request, response, next) => {
 
 
 require('dotenv').config();
+let bodyParser = require('body-parser');
+
+
 
 console.log("Hello World");
 console.log(process.env.MESSAGE_STYLE)
@@ -62,6 +65,10 @@ response.json({name: string})
 });
 
 
+app.use('/name', bodyParser.urlencoded({extended: false}), (request, response) => {
+   let string = request.query.first + ' ' + request.query.last
+   response.json({name: string})
+});
 
 
 
