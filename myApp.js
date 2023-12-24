@@ -65,13 +65,14 @@ response.json({name: string})
 });
 
 
-app.use('/name', bodyParser.urlencoded({extended: false}), (request, response) => {
-   let string = request.query.first + ' ' + request.query.last
-   response.json({name: string})
+app.use(bodyParser.urlencoded({extended: false}));
+
+
+app.post('/name', bodyParser.urlencoded({extended: false}), 
+(request, response) => {
+   let string = request.body.first + ' ' + request.body.last
+   response.json({ name: string });
 });
-
-
-
 
 
 
